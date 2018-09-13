@@ -28,3 +28,15 @@ $ ./bin/hello
   sum: 44
 
 ```
+
+building the docker image:
+
+```
+docker build . -t classmember/functional_cpp
+```
+
+running the docker image:
+
+```
+docker run -it classmember/functional_cpp
+```
