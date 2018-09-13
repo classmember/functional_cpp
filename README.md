@@ -2,6 +2,12 @@
 
 ### functional cpp examples
 
+download the project:
+
+```
+git clone https://github.com/classmember/functional_cpp.git
+```
+
 building the project:
 
 ```

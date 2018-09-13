@@ -16,18 +16,22 @@ RUN \
   apt install -y software-properties-common && \
   apt install -y byobu curl git htop man unzip vim wget && \
   apt install -y clang cmake && \
+  mkdir -p /usr/local/src && \
   rm -rf /var/lib/apt/lists/*
 
 # Add files.
-ADD root/.bashrc /root/.bashrc
-ADD root/.gitconfig /root/.gitconfig
-ADD root/.scripts /root/.scripts
+ADD ./* /usr/local/src/functional_cpp/
 
 # Set environment variables.
 ENV HOME /root
 
 # Define working directory.
-WORKDIR /root
+WORKDIR /usr/local/src/functional_cpp
+
+# Compile.
+RUN \
+  cmake -H. -Bbuild && \
+  cmake --build build -- -j3
 
 # Define default command.
-CMD ["bash"]
+CMD ["/usr/local/src/functional_cpp/bin/hello"]
