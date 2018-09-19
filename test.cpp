@@ -1,6 +1,6 @@
 /**
  * @file: test.cpp
- * @description: function cpp examples
+ * @description: functional cpp examples
  */
 
 #include <algorithm>
